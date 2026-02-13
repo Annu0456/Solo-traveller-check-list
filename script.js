@@ -28,8 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // Initialize the Gemini API
+
+                // 1. Initialize the Gemini API
                 const genAI = new GoogleGenerativeAI(apiKey);
-                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+                
+                // 2. REPLACE THIS LINE:
+                const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+
 
                 const prompt = `Create a specific travel packing checklist for a ${durText} trip to ${dest} with a focus on ${vibeText}. 
                                 Format the output as a simple list of items separated by commas. 
@@ -100,6 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+
     
     // Refresh progress logic to include the new items
     loadCheckboxState();
