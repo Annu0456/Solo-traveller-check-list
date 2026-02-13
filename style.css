@@ -49,13 +49,21 @@ body {
 }
 
 
-.logo-text {
+/*.logo-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     letter-spacing: -1px;
     font-weight: 400;
 }
+*/
 
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px; /* Increased slightly for elegance */
+    font-weight: 500;
+    color: var(--text-dark); /* Ensure the "Solo" part is dark gray */
+}
 
 .logo-text span {
     font-weight: 700;
@@ -112,9 +120,13 @@ nav {
 .brand-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 5rem;
-    color: white;
+    /* --- CHANGE STARTS HERE --- */
+    background: linear-gradient(to right, var(--rose), var(--deep-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* --- CHANGE ENDS HERE --- */
     margin-bottom: 5px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.05); /* Softened shadow */
 }
 
 
