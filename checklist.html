@@ -1,0 +1,120 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Checklist</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="logo">Smart Travel Checklist</div>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="info.html">Emergency Info</a>
+        </nav>
+    </header>
+
+
+    <!-- ================= REMINDER BANNER ================= -->
+    <section id="reminder-banner" class="reminder hidden">
+        <!-- JS will update this text dynamically -->
+        <p>You still have unchecked items!</p>
+    </section>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="checklist-page">
+
+        <!-- ===== Trip Summary Section ===== -->
+        <section class="trip-summary">
+            <h2>Your Trip Details</h2>
+            <p><strong>Destination:</strong> <span id="destination-name"></span></p>
+            <p><strong>Duration:</strong> <span id="trip-duration"></span></p>
+            <p><strong>Purpose:</strong> <span id="trip-intention"></span></p>
+        </section>
+
+
+        <!-- ===== Checklist Container ===== -->
+        <section class="checklist-container">
+
+            <h2>Your Personalized Checklist</h2>
+
+            <!-- Example Category Structure -->
+            <!-- These will be generated dynamically by JS -->
+
+            <div class="checklist-category">
+                <h3>Essentials</h3>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="check-item">
+                            Passport
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="check-item">
+                            Travel Insurance
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="checklist-category">
+                <h3>Clothing</h3>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="check-item">
+                            Jackets
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="check-item">
+                            Comfortable Shoes
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <!-- ===== Progress Section ===== -->
+        <section class="progress-section">
+            <h3>Packing Progress</h3>
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="progress-text">0% Packed</p>
+        </section>
+
+
+        <!-- ===== Action Buttons ===== -->
+        <section class="action-buttons">
+            <button id="reset-btn">Reset Checklist</button>
+            <button id="regenerate-btn">Regenerate Checklist</button>
+            <a href="index.html">
+                <button>Back to Home</button>
+            </a>
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <p>Powered by AI | Smart Travel Checklist</p>
+        <p>&copy; 2026 All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
