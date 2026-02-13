@@ -48,8 +48,8 @@ body {
     gap: 10px;
 }
 
-
-/*.logo-text {
+/*
+.logo-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     letter-spacing: -1px;
@@ -60,9 +60,9 @@ body {
 .logo-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    letter-spacing: 0.5px; /* Increased slightly for elegance */
+    letter-spacing: 0.5px; 
     font-weight: 500;
-    color: var(--text-dark); /* Ensure the "Solo" part is dark gray */
+    color: var(--text-dark); 
 }
 
 .logo-text span {
