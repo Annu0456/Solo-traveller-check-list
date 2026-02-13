@@ -73,22 +73,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. Initialize Checklist Page ---
     if (destinationSpan) {
-        const savedData = JSON.parse(localStorage.getItem('soloCheckTrip'));
+    const savedData = JSON.parse(localStorage.getItem('soloCheckTrip'));
 
-        if (savedData) {
-            destinationSpan.textContent = savedData.destination;
-            durationSpan.textContent = savedData.duration;
-            intentionSpan.textContent = savedData.intention;
-            
-            // Note: You will need a function here to render savedData.customList 
-            // into the <ul> elements if you want to see the AI items!
-        } else {
-            destinationSpan.textContent = "Unknown Destination";
+    if (savedData) {
+        destinationSpan.textContent = savedData.destination;
+        durationSpan.textContent = savedData.duration;
+        intentionSpan.textContent = savedData.intention;
+        
+        // FIX: Find the container where you want to put the AI items
+        // For this example, let's put them in the first <ul> found in the container
+        const checklistUl = document.querySelector('.checklist-category ul');
+        
+        if (savedData.customList && checklistUl) {
+            // Clear existing hardcoded items if you want only AI items
+            checklistUl.innerHTML = ''; 
+
+            savedData.customList.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <label>
+                        <input type="checkbox" class="check-item">
+                        <span>${item}</span>
+                    </label>
+                `;
+                checklistUl.appendChild(li);
+            });
         }
-
-        loadCheckboxState();
-        updateProgress();
     }
+    
+    // Refresh progress logic to include the new items
+    loadCheckboxState();
+    updateProgress();
+}
 
     // --- 3. Progress & Persistence Logic (Keep as is) ---
     function updateProgress() {
