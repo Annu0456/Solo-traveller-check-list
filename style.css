@@ -267,9 +267,8 @@ input:focus, select:focus {
     z-index: -2;
 }
 
-
 /*----checklist css----*/
- 
+  
 /* ================================================================
    1. UNIFIED HEADER & NAVIGATION (Checklist Page Fix)
    ================================================================ */
@@ -286,7 +285,6 @@ input:focus, select:focus {
     z-index: 1000;
 }
 
-
 .site-header .logo {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
@@ -295,12 +293,10 @@ input:focus, select:focus {
     letter-spacing: -1px;
 }
 
-
 .navigation {
     display: flex;
     gap: 25px;
 }
-
 
 .navigation a {
     text-decoration: none;
@@ -313,11 +309,9 @@ input:focus, select:focus {
     position: relative;
 }
 
-
 .navigation a:hover {
     color: var(--rose);
 }
-
 
 /* ================================================================
    2. UNIQUE CHECKLIST DESIGN & TYPOGRAPHY
@@ -329,7 +323,6 @@ input:focus, select:focus {
     text-align: center;
 }
 
-
 /* Elegant Title matching Index page */
 .checklist-container h2 {
     font-family: 'Cormorant Garamond', serif;
@@ -338,7 +331,6 @@ input:focus, select:focus {
     margin-bottom: 40px;
     color: var(--text-dark);
 }
-
 
 /* Trip Summary - Premium Glass Card */
 .trip-summary {
@@ -353,7 +345,6 @@ input:focus, select:focus {
     animation: fadeInUp 0.8s ease-out;
 }
 
-
 .trip-summary h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
@@ -362,7 +353,6 @@ input:focus, select:focus {
     color: var(--rose);
     margin-bottom: 15px;
 }
-
 
 /* Checklist Categories - "Floating" Effect */
 .checklist-category {
@@ -376,13 +366,11 @@ input:focus, select:focus {
     border: 1px solid transparent;
 }
 
-
 .checklist-category:hover {
     transform: translateY(-8px);
     border-color: var(--champagne);
     box-shadow: 0 20px 40px rgba(255, 149, 166, 0.1);
 }
-
 
 .checklist-category h3 {
     font-family: 'Montserrat', sans-serif;
@@ -394,17 +382,14 @@ input:focus, select:focus {
     gap: 10px;
 }
 
-
 /* Unique List Item Design */
 .checklist-category ul { list-style: none; }
-
 
 .checklist-category li {
     padding: 12px 0;
     border-bottom: 1px solid #f0f0f0;
     transition: 0.3s;
 }
-
 
 .checklist-category label {
     display: flex;
@@ -415,7 +400,6 @@ input:focus, select:focus {
     color: var(--text-dark);
     text-transform: none; /* Keeps it readable for adults */
 }
-
 
 /* Animated Custom Checkbox */
 .check-item {
@@ -430,13 +414,11 @@ input:focus, select:focus {
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
 .check-item:checked {
     background: var(--rose);
     border-color: var(--rose);
     transform: scale(1.1);
 }
-
 
 .check-item:checked::after {
     content: '✨';
@@ -446,13 +428,11 @@ input:focus, select:focus {
     top: 0px;
 }
 
-
 .check-item:checked + span {
     text-decoration: line-through;
     opacity: 0.5;
     color: var(--deep-purple);
 }
-
 
 /* ================================================================
    3. PROGRESS & ACTION BUTTONS
@@ -466,7 +446,6 @@ input:focus, select:focus {
     animation: fadeInUp 1.2s ease-out;
 }
 
-
 .progress-bar-container {
     background: rgba(255,255,255,0.1);
     height: 14px;
@@ -475,14 +454,12 @@ input:focus, select:focus {
     overflow: hidden;
 }
 
-
 #progress-bar {
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, var(--lavender), var(--rose));
     transition: width 0.6s ease;
 }
-
 
 .action-buttons button {
     background: var(--white-glass);
@@ -497,13 +474,11 @@ input:focus, select:focus {
     transition: 0.3s;
 }
 
-
 .action-buttons button:hover {
     background: var(--rose);
     color: white;
     transform: translateY(-3px);
 }
-
 
 /* ================================================================
    4. CUTE POPUP ANIMATION
@@ -512,7 +487,6 @@ input:focus, select:focus {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 
 /* Optional Success Message Vibe */
 .success-toast {
@@ -529,7 +503,6 @@ input:focus, select:focus {
    5. REMINDER BANNER STYLE
    ================================================================ */
 
-
 /* The main container */
 .reminder {
     position: fixed;
@@ -539,14 +512,12 @@ input:focus, select:focus {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
 /* Hidden state for JS to toggle */
 .reminder.hidden {
     opacity: 0;
     transform: translateX(-50px) scale(0.9);
     pointer-events: none;
 }
-
 
 /* The actual notification bubble */
 #notification {
@@ -567,16 +538,13 @@ input:focus, select:focus {
     animation: bounceIn 0.8s ease, float 3s ease-in-out infinite;
 }
 
-
 /* Adding a decorative "sparkle" icon */
 #notification::before {
-    content: '✨';
+    content: '✨'; 
     font-size: 1.2rem;
 }
 
-
 /* --- Animations --- */
-
 
 /* Gentle floating movement */
 @keyframes float {
@@ -585,10 +553,10 @@ input:focus, select:focus {
     100% { transform: translateY(0px); }
 }
 
-
 /* Bouncy entrance when it appears */
 @keyframes bounceIn {
     0% { opacity: 0; transform: scale(0.3); }
     50% { opacity: 1; transform: scale(1.05); }
     70% { transform: scale(0.9); }
     100% { transform: scale(1); }
+}
