@@ -560,3 +560,191 @@ input:focus, select:focus {
     70% { transform: scale(0.9); }
     100% { transform: scale(1); }
 }
+
+/* ================================================================
+   SAFETY HUB: PREMIUM THEME
+   ================================================================ */
+
+:root {
+    --safety-red: #ff4d6d;
+    --safety-gold: #ffb703;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Background with a subtle travel overlay */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(rgba(255, 245, 247, 0.9), rgba(255, 245, 247, 0.9)),
+                url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1920'); /* Travel Map Background */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* --- 1. Header Section --- */
+.hub-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hub-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    color: #2d3436;
+    margin-bottom: 10px;
+}
+
+#displayCity {
+    color: var(--safety-red);
+    border-bottom: 3px solid var(--safety-gold);
+}
+
+.hub-header p {
+    font-style: italic;
+    color: #636e72;
+    font-size: 1.1rem;
+}
+
+/* --- 2. Back Button --- */
+.btn-back {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: none;
+    background: #2d3436;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-back:hover {
+    background: var(--safety-red);
+    transform: translateX(-5px);
+}
+
+/* --- 3. Safety Grid Layout --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* --- 4. Safety Cards (The Variety Design) --- */
+.safety-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.safety-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Animated decorative background circle */
+.safety-card::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 183, 3, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.safety-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, var(--safety-red), transparent);
+    margin-bottom: 25px;
+}
+
+/* Emergency Contact Items */
+.contact-item {
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.contact-item strong {
+    color: #2d3436;
+}
+
+.contact-item span {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: var(--safety-red);
+    font-size: 1.2rem;
+}
+
+/* Rules List Styling */
+#localRules {
+    list-style: none;
+    padding: 0;
+}
+
+#localRules li {
+    padding: 15px 0 15px 35px;
+    position: relative;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+#localRules li::before {
+    content: '✅';
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+
+/* --- 5. Animations --- */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.emergency-list { animation: slideInRight 0.8s ease-out; }
+.rules-list { animation: slideInRight 1.2s ease-out; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hub-header h2 { font-size: 2.5rem; }
+    .info-grid { grid-template-columns: 1fr; }
+}
