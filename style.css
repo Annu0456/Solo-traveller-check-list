@@ -237,3 +237,297 @@ input:focus, select:focus {
     left: -100px;
     z-index: -2;
 }
+
+/*----checklist css----*/
+  
+/* ================================================================
+   1. UNIFIED HEADER & NAVIGATION (Checklist Page Fix)
+   ================================================================ */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: var(--white-glass);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -1px;
+}
+
+.navigation {
+    display: flex;
+    gap: 25px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.navigation a:hover {
+    color: var(--rose);
+}
+
+/* ================================================================
+   2. UNIQUE CHECKLIST DESIGN & TYPOGRAPHY
+   ================================================================ */
+.checklist-page {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Elegant Title matching Index page */
+.checklist-container h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+}
+
+/* Trip Summary - Premium Glass Card */
+.trip-summary {
+    background: var(--white-glass);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 30px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    text-align: left;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.trip-summary h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--rose);
+    margin-bottom: 15px;
+}
+
+/* Checklist Categories - "Floating" Effect */
+.checklist-category {
+    background: white;
+    border-radius: 25px;
+    padding: 35px;
+    margin-bottom: 30px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+}
+
+.checklist-category:hover {
+    transform: translateY(-8px);
+    border-color: var(--champagne);
+    box-shadow: 0 20px 40px rgba(255, 149, 166, 0.1);
+}
+
+.checklist-category h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--deep-purple);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Unique List Item Design */
+.checklist-category ul { list-style: none; }
+
+.checklist-category li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+.checklist-category label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    text-transform: none; /* Keeps it readable for adults */
+}
+
+/* Animated Custom Checkbox */
+.check-item {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--lavender);
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    background: white;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.check-item:checked {
+    background: var(--rose);
+    border-color: var(--rose);
+    transform: scale(1.1);
+}
+
+.check-item:checked::after {
+    content: '✨';
+    position: absolute;
+    font-size: 14px;
+    left: 3px;
+    top: 0px;
+}
+
+.check-item:checked + span {
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: var(--deep-purple);
+}
+
+/* ================================================================
+   3. PROGRESS & ACTION BUTTONS
+   ================================================================ */
+.progress-section {
+    background: var(--text-dark);
+    color: white;
+    padding: 40px;
+    border-radius: 40px;
+    margin: 50px 0;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.progress-bar-container {
+    background: rgba(255,255,255,0.1);
+    height: 14px;
+    border-radius: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--lavender), var(--rose));
+    transition: width 0.6s ease;
+}
+
+.action-buttons button {
+    background: var(--white-glass);
+    border: 1px solid var(--rose);
+    color: var(--text-dark);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-buttons button:hover {
+    background: var(--rose);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ================================================================
+   4. CUTE POPUP ANIMATION
+   ================================================================ */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional Success Message Vibe */
+.success-toast {
+    position: fixed;
+    bottom: 20px;
+    background: var(--rose);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 149, 166, 0.4);
+    animation: popIn 0.5s ease;
+}
+/* ================================================================
+   5. REMINDER BANNER STYLE
+   ================================================================ */
+
+/* The main container */
+.reminder {
+    position: fixed;
+    top: 100px; /* Sits below your header */
+    left: 20px;
+    z-index: 2000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hidden state for JS to toggle */
+.reminder.hidden {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.9);
+    pointer-events: none;
+}
+
+/* The actual notification bubble */
+#notification {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid #ffcad4; /* Soft pastel pink border */
+    color: #b56576; /* Muted rose text */
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: bounceIn 0.8s ease, float 3s ease-in-out infinite;
+}
+
+/* Adding a decorative "sparkle" icon */
+#notification::before {
+    content: '✨'; 
+    font-size: 1.2rem;
+}
+
+/* --- Animations --- */
+
+/* Gentle floating movement */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Bouncy entrance when it appears */
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
