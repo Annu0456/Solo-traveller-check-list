@@ -1,0 +1,14 @@
+:root {
+    --soft-blue: #e0f2fe;
+    --accent-pink: #fbcfe8;
+    --primary-mint: #99f6e4;
+    --text-main: #334155;
+    --white: #ffffff;
+    --radius: 20px; /* Extra rounded for the cute look */
+}
+
+body {
+    background-color: #f8fafc; /* Very light gray/blue */
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif; /* Use a rounded font if possible */
+}
