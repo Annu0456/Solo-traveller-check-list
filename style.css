@@ -1,3 +1,35 @@
+
+/* =======================================
+   SMART TRAVEL CHECKLIST — style.css
+   Aesthetic: Neo-brutalist pastel (muted)
+   Fonts: Fraunces (headings) + Plus Jakarta Sans (body)
+   Layout: 2-col grid, wide cards, airy spacing
+   ======================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --pink-hot:     #d9a0aa;
+  --pink-soft:    #e8cdd3;
+  --peach:        #e8d5cc;
+  --lavender:     #c5b8cc;
+  --purple:       #b0a0bc;
+
+  --black:        #000000;
+  --white:        #ffffff;
+  --bg:           #f7f3f4;
+
+  --border:       3px solid #000000;
+  --shadow:       5px 5px 0px 0px #000000;
+  --shadow-hover: 8px 8px 0px 0px #000000;
+  --radius:       20px;
+
+  --transition:   0.18s ease;
+
+  --font-display: 'Fraunces', serif;
+  --font-body:    'Plus Jakarta Sans', sans-serif;
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Montserrat:wght@400;700&family=Outfit:wght@300;400;600&display=swap');
 
 :root {
@@ -13,9 +45,476 @@
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
+>>>>>>> b0500332071d06fe04c06c062abf2be9cebcf193
 }
 
+/* ===== RESET ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
 body {
+
+  font-family: <<<<<<< HEADvar(--font-body);
+  background-color: var(--bg);
+  color: var(--black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  background: var(--pink-hot);
+  border-bottom: var(--border);
+  padding: 0 3rem;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--black);
+  letter-spacing: -0.03em;
+}
+
+.navigation {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.navigation a {
+  color: var(--black);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 50px;
+  padding: 0.45rem 1.15rem;
+  box-shadow: 3px 3px 0px 0px #000000;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.navigation a:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px #000000;
+}
+
+/* ===== REMINDER BANNER ===== */
+.reminder {
+  background: var(--peach);
+  border-bottom: var(--border);
+  text-align: center;
+  padding: 0.9rem 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--black);
+}
+
+.reminder.hidden { display: none; }
+
+/* ===== MAIN LAYOUT ===== */
+.checklist-page {
+  flex: 1;
+  max-width: 900px;          /* narrower max-width = cards feel wider */
+  width: 100%;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;                 /* generous section gap */
+}
+
+/* ===== TRIP SUMMARY ===== */
+.trip-summary {
+  background: var(--pink-soft);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 3rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.trip-summary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.trip-summary h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.65rem;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  margin-bottom: 1.75rem;
+}
+
+.trip-summary p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--black);
+}
+
+.trip-summary p + p {
+  margin-top: 1rem;
+}
+
+.trip-summary strong {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-right: 0.6rem;
+  opacity: 0.5;
+}
+
+/* ===== CHECKLIST CONTAINER ===== */
+.checklist-container {
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.75rem 3rem;
+}
+
+.checklist-container > h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.55rem;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  margin-bottom: 2.25rem;
+}
+
+/* ===== 2-COLUMN CARD GRID ===== */
+/* Switched from 3-col → 2-col so cards are wider and less crowded */
+.checklist-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Each category card */
+.checklist-category {
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.25rem 2.25rem 2.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.checklist-category:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Muted cycling colors */
+.checklist-category:nth-child(5n+1) { background: var(--pink-hot); }
+.checklist-category:nth-child(5n+2) { background: var(--pink-soft); }
+.checklist-category:nth-child(5n+3) { background: var(--peach); }
+.checklist-category:nth-child(5n+4) { background: var(--lavender); }
+.checklist-category:nth-child(5n+5) { background: var(--purple); }
+
+/* Icon placeholder */
+.checklist-category::before {
+  content: '✦';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0px 0px #000000;
+  font-size: 1.35rem;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.checklist-category:nth-child(5n+1)::before { content: '📌'; }
+.checklist-category:nth-child(5n+2)::before { content: '👕'; }
+.checklist-category:nth-child(5n+3)::before { content: '💊'; }
+.checklist-category:nth-child(5n+4)::before { content: '🔌'; }
+.checklist-category:nth-child(5n+5)::before { content: '📄'; }
+
+.checklist-category h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  color: var(--black);
+}
+
+.checklist-category ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checklist-category li {
+  border-radius: 10px;
+  transition: background var(--transition);
+}
+
+.checklist-category li:hover { background: rgba(255,255,255,0.45); }
+
+.checklist-category label {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 0.7rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--black);
+  border-radius: 10px;
+  user-select: none;
+}
+
+/* ===== CUSTOM CHECKBOX ===== */
+input[type="checkbox"].check-item {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  border: 2.5px solid var(--black);
+  border-radius: 6px;
+  background: var(--white);
+  cursor: pointer;
+  position: relative;
+  transition: background var(--transition), transform var(--transition),
+              box-shadow var(--transition);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+input[type="checkbox"].check-item:hover {
+  transform: scale(1.12);
+  box-shadow: 3px 3px 0px 0px #000000;
+}
+
+input[type="checkbox"].check-item:checked {
+  background: var(--black);
+  border-color: var(--black);
+}
+
+input[type="checkbox"].check-item:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px; top: 1px;
+  width: 7px; height: 11px;
+  border: 2.5px solid var(--white);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+label:has(input:checked) {
+  color: rgba(0,0,0,0.35);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+/* ===== PROGRESS SECTION ===== */
+.progress-section {
+  background: var(--lavender);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 3rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.progress-section:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.progress-section h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar-container {
+  background: rgba(255,255,255,0.6);
+  border: var(--border);
+  border-radius: 50px;
+  height: 22px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--black);
+  border-radius: 50px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#progress-text {
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--black);
+  opacity: 0.65;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-buttons {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.action-buttons button,
+.action-buttons a button {
+  flex: 1;
+  min-width: 150px;
+  padding: 1.1rem 1.75rem;
+  border: var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  color: var(--black);
+}
+
+.action-buttons button:hover,
+.action-buttons a button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.action-buttons button:active,
+.action-buttons a button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+#reset-btn        { background: var(--peach); }
+#regenerate-btn   { background: var(--purple); }
+
+.action-buttons a {
+  text-decoration: none;
+  flex: 1;
+  min-width: 150px;
+}
+
+.action-buttons a button {
+  width: 100%;
+  background: var(--pink-hot);
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 2.25rem 1.5rem;
+  font-size: 0.85rem;
+  line-height: 2.4;
+  border-top: var(--border);
+}
+
+.site-footer p:first-child {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.site-footer p:last-child {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--pink-hot);
+  border-radius: 99px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--purple); }
+
+/* ===== SELECTION ===== */
+::selection {
+  background: var(--pink-hot);
+  color: var(--black);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .site-header { padding: 0 1.5rem; }
+  .logo { font-size: 1.15rem; }
+
+  .navigation a {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .checklist-page {
+    padding: 2rem 1.25rem 4rem;
+    gap: 2rem;
+  }
+
+  .trip-summary,
+  .checklist-container,
+  .progress-section {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .checklist-category-grid {
+    grid-template-columns: 1fr;   /* single column on mobile */
+    gap: 1.5rem;
+  }
+
+  .action-buttons { flex-direction: column; }
+  .action-buttons a { min-width: 100%; }
+}
+
     background: linear-gradient(135deg, var(--champagne) 0%, var(--lavender) 100%);
     font-family: 'Outfit', sans-serif;
     color: var(--text-dark);
