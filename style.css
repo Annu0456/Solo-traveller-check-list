@@ -1,36 +1,5 @@
-
-/* =======================================
-   SMART TRAVEL CHECKLIST — style.css
-   Aesthetic: Neo-brutalist pastel (muted)
-   Fonts: Fraunces (headings) + Plus Jakarta Sans (body)
-   Layout: 2-col grid, wide cards, airy spacing
-   ======================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
-/* ===== CSS VARIABLES ===== */
-:root {
-  --pink-hot:     #d9a0aa;
-  --pink-soft:    #e8cdd3;
-  --peach:        #e8d5cc;
-  --lavender:     #c5b8cc;
-  --purple:       #b0a0bc;
-
-  --black:        #000000;
-  --white:        #ffffff;
-  --bg:           #f7f3f4;
-
-  --border:       3px solid #000000;
-  --shadow:       5px 5px 0px 0px #000000;
-  --shadow-hover: 8px 8px 0px 0px #000000;
-  --radius:       20px;
-
-  --transition:   0.18s ease;
-
-  --font-display: 'Fraunces', serif;
-  --font-body:    'Plus Jakarta Sans', sans-serif;
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Montserrat:wght@400;700&family=Outfit:wght@300;400;600&display=swap');
+
 
 :root {
     --rose: #FF95A6;
@@ -41,486 +10,22 @@
     --white-glass: rgba(255, 255, 255, 0.6);
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
->>>>>>> b0500332071d06fe04c06c062abf2be9cebcf193
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ===== RESET ===== */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html { scroll-behavior: smooth; }
 
 body {
-
-  font-family: <<<<<<< HEADvar(--font-body);
-  background-color: var(--bg);
-  color: var(--black);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-/* ===== HEADER ===== */
-.site-header {
-  background: var(--pink-hot);
-  border-bottom: var(--border);
-  padding: 0 3rem;
-  height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.logo {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.4rem;
-  color: var(--black);
-  letter-spacing: -0.03em;
-}
-
-.navigation {
-  display: flex;
-  gap: 0.85rem;
-}
-
-.navigation a {
-  color: var(--black);
-  text-decoration: none;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  background: var(--white);
-  border: var(--border);
-  border-radius: 50px;
-  padding: 0.45rem 1.15rem;
-  box-shadow: 3px 3px 0px 0px #000000;
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.navigation a:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px 0px #000000;
-}
-
-/* ===== REMINDER BANNER ===== */
-.reminder {
-  background: var(--peach);
-  border-bottom: var(--border);
-  text-align: center;
-  padding: 0.9rem 1.5rem;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--black);
-}
-
-.reminder.hidden { display: none; }
-
-/* ===== MAIN LAYOUT ===== */
-.checklist-page {
-  flex: 1;
-  max-width: 900px;          /* narrower max-width = cards feel wider */
-  width: 100%;
-  margin: 0 auto;
-  padding: 3.5rem 2rem 6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;                 /* generous section gap */
-}
-
-/* ===== TRIP SUMMARY ===== */
-.trip-summary {
-  background: var(--pink-soft);
-  border: var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 2.5rem 3rem;
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.trip-summary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hover);
-}
-
-.trip-summary h2 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.65rem;
-  letter-spacing: -0.03em;
-  color: var(--black);
-  margin-bottom: 1.75rem;
-}
-
-.trip-summary p {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: var(--black);
-}
-
-.trip-summary p + p {
-  margin-top: 1rem;
-}
-
-.trip-summary strong {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-right: 0.6rem;
-  opacity: 0.5;
-}
-
-/* ===== CHECKLIST CONTAINER ===== */
-.checklist-container {
-  background: var(--white);
-  border: var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 2.75rem 3rem;
-}
-
-.checklist-container > h2 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.55rem;
-  letter-spacing: -0.03em;
-  color: var(--black);
-  margin-bottom: 2.25rem;
-}
-
-/* ===== 2-COLUMN CARD GRID ===== */
-/* Switched from 3-col → 2-col so cards are wider and less crowded */
-.checklist-category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-/* Each category card */
-.checklist-category {
-  border: var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 2.25rem 2.25rem 2.5rem;
-  transition: transform var(--transition), box-shadow var(--transition);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.checklist-category:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hover);
-}
-
-/* Muted cycling colors */
-.checklist-category:nth-child(5n+1) { background: var(--pink-hot); }
-.checklist-category:nth-child(5n+2) { background: var(--pink-soft); }
-.checklist-category:nth-child(5n+3) { background: var(--peach); }
-.checklist-category:nth-child(5n+4) { background: var(--lavender); }
-.checklist-category:nth-child(5n+5) { background: var(--purple); }
-
-/* Icon placeholder */
-.checklist-category::before {
-  content: '✦';
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: var(--white);
-  border: var(--border);
-  border-radius: 14px;
-  box-shadow: 3px 3px 0px 0px #000000;
-  font-size: 1.35rem;
-  color: var(--black);
-  flex-shrink: 0;
-}
-
-.checklist-category:nth-child(5n+1)::before { content: '📌'; }
-.checklist-category:nth-child(5n+2)::before { content: '👕'; }
-.checklist-category:nth-child(5n+3)::before { content: '💊'; }
-.checklist-category:nth-child(5n+4)::before { content: '🔌'; }
-.checklist-category:nth-child(5n+5)::before { content: '📄'; }
-
-.checklist-category h3 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: -0.01em;
-  color: var(--black);
-}
-
-.checklist-category ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.checklist-category li {
-  border-radius: 10px;
-  transition: background var(--transition);
-}
-
-.checklist-category li:hover { background: rgba(255,255,255,0.45); }
-
-.checklist-category label {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  padding: 0.65rem 0.7rem;
-  cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 0.97rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--black);
-  border-radius: 10px;
-  user-select: none;
-}
-
-/* ===== CUSTOM CHECKBOX ===== */
-input[type="checkbox"].check-item {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 21px;
-  height: 21px;
-  min-width: 21px;
-  border: 2.5px solid var(--black);
-  border-radius: 6px;
-  background: var(--white);
-  cursor: pointer;
-  position: relative;
-  transition: background var(--transition), transform var(--transition),
-              box-shadow var(--transition);
-  box-shadow: 2px 2px 0px 0px #000000;
-}
-
-input[type="checkbox"].check-item:hover {
-  transform: scale(1.12);
-  box-shadow: 3px 3px 0px 0px #000000;
-}
-
-input[type="checkbox"].check-item:checked {
-  background: var(--black);
-  border-color: var(--black);
-}
-
-input[type="checkbox"].check-item:checked::after {
-  content: '';
-  position: absolute;
-  left: 4px; top: 1px;
-  width: 7px; height: 11px;
-  border: 2.5px solid var(--white);
-  border-top: none;
-  border-left: none;
-  transform: rotate(45deg);
-}
-
-label:has(input:checked) {
-  color: rgba(0,0,0,0.35);
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
-}
-
-/* ===== PROGRESS SECTION ===== */
-.progress-section {
-  background: var(--lavender);
-  border: var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 2.5rem 3rem;
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.progress-section:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hover);
-}
-
-.progress-section h3 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.3rem;
-  letter-spacing: -0.02em;
-  color: var(--black);
-  margin-bottom: 1.5rem;
-}
-
-.progress-bar-container {
-  background: rgba(255,255,255,0.6);
-  border: var(--border);
-  border-radius: 50px;
-  height: 22px;
-  overflow: hidden;
-  margin-bottom: 1.25rem;
-}
-
-#progress-bar {
-  height: 100%;
-  width: 0%;
-  background: var(--black);
-  border-radius: 50px;
-  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#progress-text {
-  font-family: var(--font-body);
-  font-size: 0.87rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--black);
-  opacity: 0.65;
-}
-
-/* ===== ACTION BUTTONS ===== */
-.action-buttons {
-  display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.action-buttons button,
-.action-buttons a button {
-  flex: 1;
-  min-width: 150px;
-  padding: 1.1rem 1.75rem;
-  border: var(--border);
-  border-radius: var(--radius);
-  font-family: var(--font-body);
-  font-size: 0.87rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
-  color: var(--black);
-}
-
-.action-buttons button:hover,
-.action-buttons a button:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hover);
-}
-
-.action-buttons button:active,
-.action-buttons a button:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px 0px #000000;
-}
-
-#reset-btn        { background: var(--peach); }
-#regenerate-btn   { background: var(--purple); }
-
-.action-buttons a {
-  text-decoration: none;
-  flex: 1;
-  min-width: 150px;
-}
-
-.action-buttons a button {
-  width: 100%;
-  background: var(--pink-hot);
-}
-
-/* ===== FOOTER ===== */
-.site-footer {
-  background: var(--black);
-  color: var(--white);
-  text-align: center;
-  padding: 2.25rem 1.5rem;
-  font-size: 0.85rem;
-  line-height: 2.4;
-  border-top: var(--border);
-}
-
-.site-footer p:first-child {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: -0.01em;
-}
-
-.site-footer p:last-child {
-  color: rgba(255,255,255,0.4);
-  font-size: 0.8rem;
-  font-family: var(--font-body);
-}
-
-/* ===== SCROLLBAR ===== */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb {
-  background: var(--pink-hot);
-  border-radius: 99px;
-  border: 2px solid var(--bg);
-}
-::-webkit-scrollbar-thumb:hover { background: var(--purple); }
-
-/* ===== SELECTION ===== */
-::selection {
-  background: var(--pink-hot);
-  color: var(--black);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 640px) {
-  .site-header { padding: 0 1.5rem; }
-  .logo { font-size: 1.15rem; }
-
-  .navigation a {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.75rem;
-  }
-
-  .checklist-page {
-    padding: 2rem 1.25rem 4rem;
-    gap: 2rem;
-  }
-
-  .trip-summary,
-  .checklist-container,
-  .progress-section {
-    padding: 1.75rem 1.5rem;
-  }
-
-  .checklist-category-grid {
-    grid-template-columns: 1fr;   /* single column on mobile */
-    gap: 1.5rem;
-  }
-
-  .action-buttons { flex-direction: column; }
-  .action-buttons a { min-width: 100%; }
-}
-
     background: linear-gradient(135deg, var(--champagne) 0%, var(--lavender) 100%);
     font-family: 'Outfit', sans-serif;
     color: var(--text-dark);
     min-height: 100vh;
     overflow-x: hidden;
 }
+
 
 /* --- Sophisticated Header --- */
 .navbar {
@@ -536,11 +41,13 @@ label:has(input:checked) {
     z-index: 1000;
 }
 
+
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 
 .logo-text {
     font-family: 'Montserrat', sans-serif;
@@ -549,15 +56,18 @@ label:has(input:checked) {
     font-weight: 400;
 }
 
+
 .logo-text span {
     font-weight: 700;
     color: var(--rose);
 }
 
+
 nav {
     display: flex;
     gap: 30px;
 }
+
 
 .nav-link {
     text-decoration: none;
@@ -570,9 +80,11 @@ nav {
     position: relative;
 }
 
+
 .nav-link:hover, .nav-link.active {
     color: var(--rose);
 }
+
 
 .nav-link.active::after {
     content: '';
@@ -585,6 +97,7 @@ nav {
     border-radius: 2px;
 }
 
+
 /* --- Main Layout --- */
 .wrapper {
     display: flex;
@@ -595,6 +108,7 @@ nav {
     position: relative;
 }
 
+
 .brand-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 5rem;
@@ -603,6 +117,7 @@ nav {
     text-shadow: 2px 2px 10px rgba(0,0,0,0.05);
 }
 
+
 .quote-box {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -610,6 +125,7 @@ nav {
     margin-bottom: 40px;
     opacity: 0.8;
 }
+
 
 /* --- The Elegant Card --- */
 .aesthetic-card {
@@ -624,6 +140,7 @@ nav {
     z-index: 10;
 }
 
+
 .hero-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -632,9 +149,11 @@ nav {
     margin-bottom: 10px;
 }
 
+
 .hero-title span {
     color: var(--rose);
 }
+
 
 .hero-subtitle {
     font-weight: 300;
@@ -643,17 +162,20 @@ nav {
     opacity: 0.8;
 }
 
+
 /* --- Form Fields --- */
 .input-group {
     margin-bottom: 25px;
     text-align: left;
 }
 
+
 .input-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+
 
 label {
     font-size: 0.75rem;
@@ -664,6 +186,7 @@ label {
     margin-bottom: 8px;
     display: block;
 }
+
 
 input, select {
     width: 100%;
@@ -676,11 +199,13 @@ input, select {
     transition: all 0.3s ease;
 }
 
+
 input:focus, select:focus {
     outline: none;
     border-color: var(--rose);
     box-shadow: 0 0 15px rgba(255, 149, 166, 0.15);
 }
+
 
 /* --- Action Button --- */
 .btn-primary {
@@ -699,11 +224,13 @@ input:focus, select:focus {
     margin-top: 10px;
 }
 
+
 .btn-primary:hover {
     background: var(--rose);
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(255, 149, 166, 0.3);
 }
+
 
 /* --- Animated Icons --- */
 .floating-item {
@@ -714,15 +241,18 @@ input:focus, select:focus {
     animation: floatingAnimation 8s ease-in-out infinite;
 }
 
+
 .plane { top: 15%; left: 8%; animation-delay: 0s; }
 .passport { bottom: 20%; left: 12%; animation-delay: 2s; }
 .cloud { top: 25%; right: 10%; animation-delay: 4s; }
 .star { bottom: 15%; right: 15%; animation-delay: 1s; }
 
+
 @keyframes floatingAnimation {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-30px) rotate(5deg); }
 }
+
 
 .blob {
     position: fixed;
@@ -736,3 +266,329 @@ input:focus, select:focus {
     left: -100px;
     z-index: -2;
 }
+
+
+/*----checklist css----*/
+ 
+/* ================================================================
+   1. UNIFIED HEADER & NAVIGATION (Checklist Page Fix)
+   ================================================================ */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: var(--white-glass);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.site-header .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -1px;
+}
+
+
+.navigation {
+    display: flex;
+    gap: 25px;
+}
+
+
+.navigation a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    position: relative;
+}
+
+
+.navigation a:hover {
+    color: var(--rose);
+}
+
+
+/* ================================================================
+   2. UNIQUE CHECKLIST DESIGN & TYPOGRAPHY
+   ================================================================ */
+.checklist-page {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* Elegant Title matching Index page */
+.checklist-container h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+}
+
+
+/* Trip Summary - Premium Glass Card */
+.trip-summary {
+    background: var(--white-glass);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 30px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    text-align: left;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+
+.trip-summary h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--rose);
+    margin-bottom: 15px;
+}
+
+
+/* Checklist Categories - "Floating" Effect */
+.checklist-category {
+    background: white;
+    border-radius: 25px;
+    padding: 35px;
+    margin-bottom: 30px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+}
+
+
+.checklist-category:hover {
+    transform: translateY(-8px);
+    border-color: var(--champagne);
+    box-shadow: 0 20px 40px rgba(255, 149, 166, 0.1);
+}
+
+
+.checklist-category h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--deep-purple);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Unique List Item Design */
+.checklist-category ul { list-style: none; }
+
+
+.checklist-category li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+
+.checklist-category label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    text-transform: none; /* Keeps it readable for adults */
+}
+
+
+/* Animated Custom Checkbox */
+.check-item {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--lavender);
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    background: white;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.check-item:checked {
+    background: var(--rose);
+    border-color: var(--rose);
+    transform: scale(1.1);
+}
+
+
+.check-item:checked::after {
+    content: '✨';
+    position: absolute;
+    font-size: 14px;
+    left: 3px;
+    top: 0px;
+}
+
+
+.check-item:checked + span {
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: var(--deep-purple);
+}
+
+
+/* ================================================================
+   3. PROGRESS & ACTION BUTTONS
+   ================================================================ */
+.progress-section {
+    background: var(--text-dark);
+    color: white;
+    padding: 40px;
+    border-radius: 40px;
+    margin: 50px 0;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+
+.progress-bar-container {
+    background: rgba(255,255,255,0.1);
+    height: 14px;
+    border-radius: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--lavender), var(--rose));
+    transition: width 0.6s ease;
+}
+
+
+.action-buttons button {
+    background: var(--white-glass);
+    border: 1px solid var(--rose);
+    color: var(--text-dark);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.action-buttons button:hover {
+    background: var(--rose);
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* ================================================================
+   4. CUTE POPUP ANIMATION
+   ================================================================ */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Optional Success Message Vibe */
+.success-toast {
+    position: fixed;
+    bottom: 20px;
+    background: var(--rose);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 149, 166, 0.4);
+    animation: popIn 0.5s ease;
+}
+/* ================================================================
+   5. REMINDER BANNER STYLE
+   ================================================================ */
+
+
+/* The main container */
+.reminder {
+    position: fixed;
+    top: 100px; /* Sits below your header */
+    left: 20px;
+    z-index: 2000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/* Hidden state for JS to toggle */
+.reminder.hidden {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.9);
+    pointer-events: none;
+}
+
+
+/* The actual notification bubble */
+#notification {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid #ffcad4; /* Soft pastel pink border */
+    color: #b56576; /* Muted rose text */
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: bounceIn 0.8s ease, float 3s ease-in-out infinite;
+}
+
+
+/* Adding a decorative "sparkle" icon */
+#notification::before {
+    content: '✨';
+    font-size: 1.2rem;
+}
+
+
+/* --- Animations --- */
+
+
+/* Gentle floating movement */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* Bouncy entrance when it appears */
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
