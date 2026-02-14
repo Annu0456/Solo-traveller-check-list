@@ -113,8 +113,9 @@ OR use Live Server extension in VS Code.
 ## Screenshots 
 
 ### 1️⃣ Trip Planner Page
-![Trip Planner Page 1](\planner1.png)
-![Trip Planner page 2](\planner2.png)
+![Trip Planner Page 1](planner1.png)
+
+![Trip Planner page 2](planner2.png)
 
 Caption:  
 This page allows users to enter their destination, trip duration, travel vibe, and Gemini API key to generate a personalized checklist.
@@ -123,11 +124,11 @@ This page allows users to enter their destination, trip duration, travel vibe, a
 
 ### 2️⃣ AI Generated Checklist Page
 
-![Checklist Page 1](\checklist1.png)
+![Checklist Page 1](checklist1.png)
 
-![Checklist Page 2](\checklist2.png)
+![Checklist Page 2](checklist2.png)
 
-![Checklist Page 3](\checklist3.png)
+![Checklist Page 3](checklist3.png)
 
 Caption:  
 Displays AI-generated packing items, progress tracker, reminder banner, and reset functionality.
@@ -136,6 +137,9 @@ Displays AI-generated packing items, progress tracker, reminder banner, and rese
 
 ### 3️⃣ Safety Hub Page
 
+![Emeregency info Page 1](emergency1.png)
+
+![Emergency info Page 2](emergency2.png)
 
 
 Caption:  
@@ -147,20 +151,20 @@ Shows emergency contact numbers and local safety tips for the selected destinati
 
 ## System Architecture
 
+```text
 User Input (Destination, Duration, Vibe)
-↓
+        ↓
 Frontend Form (index.html)
-↓
+        ↓
 Gemini API Call (script.js)
-↓
+        ↓
 AI Generated Checklist
-↓
+        ↓
 LocalStorage
-↓
+        ↓
 Checklist Page Rendering
-↓
+        ↓
 Progress Tracking + Safety Hub
-
 
 
 ### Architecture Explanation
