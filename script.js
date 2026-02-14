@@ -291,6 +291,48 @@ if (destinationSpan) {
         });
     }
 
+
+    const customBtn = document.getElementById('add-custom-btn');
+    const customInput = document.getElementById('custom-item-input');
+
+    function appendItemToUI(text, isChecked = false) {
+        // Targets the dynamic list created by your Gemini logic
+        const ul = document.getElementById('dynamic-list') || document.querySelector('.checklist-category ul');
+        if (!ul) return;
+
+        const li = document.createElement('li');
+        li.className = 'custom-user-item'; 
+        li.innerHTML = `
+            <label>
+                <input type="checkbox" class="check-item" ${isChecked ? 'checked' : ''}>
+                <span>${text}</span>
+            </label>
+        `;
+        ul.appendChild(li);
+        updateProgress(); // Updates the progress bar
+    }
+
+    const savedCustomItems = JSON.parse(localStorage.getItem('userCustomItems')) || [];
+    savedCustomItems.forEach(item => appendItemToUI(item.text, item.checked));
+
+    if (customBtn) {
+        customBtn.addEventListener('click', () => {
+            const text = customInput.value.trim();
+            if (text) {
+                appendItemToUI(text);
+                saveCustomItems();
+                customInput.value = ''; 
+            }
+        });
+    }
+
+    function saveCustomItems() {
+        const customItems = Array.from(document.querySelectorAll('.custom-user-item')).map(li => ({
+            text: li.querySelector('span').textContent,
+            checked: li.querySelector('input').checked
+        }));
+        localStorage.setItem('userCustomItems', JSON.stringify(customItems));
+    }
     // emergency contact saving logic (example)
     // --- 4. Initialize Safety Info Page (Gemini Emergency Fetch) ---
 const policeNum = document.getElementById("policeNum");
