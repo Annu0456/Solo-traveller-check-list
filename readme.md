@@ -210,7 +210,7 @@ Progress Tracking + Safety Hub
 
 ## Project Demo
 
-[▶️ Watch Demo Video](https://drive.google.com/file/d/12dbcz5x7hvVmRlkLcD6FmGs7W3kgNxv0/view?usp=sharing)
+▶️ Watch Demo Video https://drive.google.com/file/d/12dbcz5x7hvVmRlkLcD6FmGs7W3kgNxv0/view?usp=sharing
 
 ---
 
