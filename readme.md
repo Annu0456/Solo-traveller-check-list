@@ -204,6 +204,16 @@ Progress Tracking + Safety Hub
  This workflow ensures smooth travel preparation from planning to safety awareness.
 
 ---
+# Project Demo
+
+## Video
+
+## Project Demo
+
+[▶️ Watch Demo Video](solocheck demo.mp4)
+
+---
+
 
 ## Additional Demos
 
