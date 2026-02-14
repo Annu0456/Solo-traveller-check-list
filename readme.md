@@ -14,13 +14,13 @@
 
 ## Hosted Project Link
 
-[Add your deployed link here – Netlify / Vercel / GitHub Pages]
+https://annu0456.github.io/Solo-traveller-check-list/
 
 ---
 
 ## Project Description
 
-SoloCheck is an AI-powered smart travel checklist generator that creates a personalized packing list based on destination, trip duration, and travel purpose. It also provides local emergency contacts and safety guidelines to help travelers stay prepared and safe.
+SoloCheck is an AI-powered smart travel checklist generator that creates a personalized packing list based on destination, trip duration, and travel purpose. It also provides local emergency contacts and safety guidelines to help travelers stay prepared and safe. Users can additionally add their own custom checklist items for better personalization.
 
 ---
 
@@ -84,6 +84,10 @@ Displays emergency contacts and local safety guidelines for the destination.
 ### Feature 4: Persistent Data Storage
 Saves checklist progress using LocalStorage even after page refresh.
 
+### Feature 5: Add Custom Item (User Personalization)
+Users can manually add their own checklist items (e.g., medicines, laptop charger, personal essentials).  
+New items are instantly added as checklist rows and are saved in LocalStorage so they remain available after page refresh.
+
 ---
 
 # Implementation
@@ -112,10 +116,6 @@ OR
 Use Live Server in VS Code
 
 The application will run directly in the browser.
-
-The deployed version is hosted on Vercel.
-
-
 ---
 
 # Project Documentation
@@ -134,16 +134,17 @@ This page allows users to enter their destination, trip duration, travel vibe, a
 
 ---
 
-### 2️⃣ AI Generated Checklist Page
+### 2️⃣ AI Generated Checklist Page and Custom Items
 
 ![Checklist Page 1](checklist1.png)
 
 ![Checklist Page 2](checklist2.png)
 
-![Checklist Page 3](checklist3.png)
+![Custom Item Feature 1](customimage1.jpg)
 
- 
-Displays AI-generated packing items, progress tracker, reminder banner, and reset functionality.
+![Custom Item Feature 2](customimage2.jpg)
+
+Displays AI-generated packing items, progress tracker, reminder banner, and reset functionality.Shows users adding their own personalized checklist items.
 
 ---
 
@@ -170,7 +171,7 @@ Frontend Form (index.html)
         ↓
 Gemini API Call (script.js)
         ↓
-AI Generated Checklist
+AI Generated Checklist and Custom Item
         ↓
 LocalStorage
         ↓
@@ -187,6 +188,7 @@ Progress Tracking + Safety Hub
 - Data is stored in LocalStorage
 - Checklist page dynamically renders items
 - Progress and safety modules enhance usability
+- Users can add custom checklist items which are stored in LocalStorage along with AI-generated items.
 
 ---
 
@@ -194,7 +196,7 @@ Progress Tracking + Safety Hub
 
 1. User opens planner page
 2. Enters trip details
-3. AI generates checklist
+3. AI generates checklist and Custom Item
 4. User checks items while packing
 5. Progress bar updates
 6. User views safety information
@@ -205,7 +207,7 @@ Progress Tracking + Safety Hub
 
 ## Additional Demos
 
-- Live Site: [Add hosted link]
+- Live Site: https://annu0456.github.io/Solo-traveller-check-list/
 - GitHub Repository: https://github.com/Annu0456/Solo-traveller-check-list.git
 
 
