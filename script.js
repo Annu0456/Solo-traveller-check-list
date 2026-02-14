@@ -252,6 +252,8 @@ if (destinationSpan) {
         
         saveCheckboxState();
     }
+    //function for saving emergency contact numbers and local guidelines
+    
 
     function saveCheckboxState() {
         const currentCheckboxes = document.querySelectorAll('.check-item');
