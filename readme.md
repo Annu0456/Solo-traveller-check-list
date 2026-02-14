@@ -92,23 +92,35 @@ Saves checklist progress using LocalStorage even after page refresh.
 
 ### Installation
 
-No installation required for users.
+1. Clone the repository
+   git clone https://github.com/Annu0456/Solo-traveller-check-list.git
 
----
+2. Navigate to the project folder
+   cd Solo-traveller-check-list
+
+3. Open the project in your code editor (VS Code recommended).
 
 ### Run
 
-Open `index.html` in your browser.
+Since this is a frontend-only application, no backend setup is required.
 
-OR use Live Server extension in VS Code.
+To run locally:
+
+Open the index.html file in your browser
+OR
+
+Use Live Server in VS Code
+
+The application will run directly in the browser.
+
+The deployed version is hosted on Vercel.
+
 
 ---
 
 # Project Documentation
 
 ## For Software:
-
----
 
 ## Screenshots 
 
@@ -117,7 +129,7 @@ OR use Live Server extension in VS Code.
 
 ![Trip Planner page 2](planner2.png)
 
-Caption:  
+
 This page allows users to enter their destination, trip duration, travel vibe, and Gemini API key to generate a personalized checklist.
 
 ---
@@ -130,7 +142,7 @@ This page allows users to enter their destination, trip duration, travel vibe, a
 
 ![Checklist Page 3](checklist3.png)
 
-Caption:  
+ 
 Displays AI-generated packing items, progress tracker, reminder banner, and reset functionality.
 
 ---
@@ -142,7 +154,7 @@ Displays AI-generated packing items, progress tracker, reminder banner, and rese
 ![Emergency info Page 2](emergency2.png)
 
 
-Caption:  
+
 Shows emergency contact numbers and local safety tips for the selected destination.
 
 ---
@@ -187,21 +199,7 @@ Progress Tracking + Safety Hub
 5. Progress bar updates
 6. User views safety information
 
-Caption: This workflow ensures smooth travel preparation from planning to safety awareness.
-
----
-
-# Project Demo
-
-## Video
-
-[Add your demo video link here – YouTube / Drive]
-
-Explain in video:
-- How checklist is generated
-- How progress tracking works
-- How safety hub functions
-- Technical overview
+ This workflow ensures smooth travel preparation from planning to safety awareness.
 
 ---
 
@@ -246,12 +244,12 @@ Explain in video:
 
 # Team Contributions
 
-**Jaqulin Shaji:**
+**Annu Shaji:**
 - Frontend development
 - UI/UX design
 - Documentation
 
-**[Member Name]:**
+**Cinol Samson:**
 - Testing
 - Safety Hub logic
 - AI integration
