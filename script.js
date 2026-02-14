@@ -81,6 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('soloCheckTrip', JSON.stringify(tripData));
 
                 // Redirect to checklist page
+
+                //for emergency number saving
+                localStorage.setItem("geminiApiKey", apiKey);
+
                 window.location.href = 'checklist.html';
 
             } catch (error) {
@@ -286,4 +290,82 @@ if (destinationSpan) {
             }
         });
     }
+
+    // emergency contact saving logic (example)
+    // --- 4. Initialize Safety Info Page (Gemini Emergency Fetch) ---
+const policeNum = document.getElementById("policeNum");
+
+if (policeNum) {
+    const savedData = JSON.parse(localStorage.getItem("soloCheckTrip"));
+
+    if (savedData) {
+        const city = savedData.destination;
+        const apiKey = localStorage.getItem("geminiApiKey");
+
+        document.getElementById("displayCity").textContent = city;
+
+        if (!apiKey) {
+            alert("API key missing. Please regenerate checklist from home page.");
+            return;
+        }
+
+        async function fetchEmergencyInfo() {
+            try {
+                const genAI = new GoogleGenerativeAI(apiKey);
+                const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+
+                const prompt = `
+                Provide emergency contact numbers and 4 important safety tips for travelers in ${city}.
+                Format strictly as:
+
+                Police: number
+                Ambulance: number
+                Women's Helpline: number
+
+                Tips:
+                - tip 1
+                - tip 2
+                - tip 3
+                - tip 4
+                `;
+
+                const result = await model.generateContent(prompt);
+                const response = await result.response;
+                const text = response.text();
+
+                // Extract numbers
+                const policeMatch = text.match(/Police:\s*(.*)/i);
+                const ambulanceMatch = text.match(/Ambulance:\s*(.*)/i);
+                const womenMatch = text.match(/Women's Helpline:\s*(.*)/i);
+
+                document.getElementById("policeNum").textContent = policeMatch ? policeMatch[1] : "N/A";
+                document.getElementById("ambulanceNum").textContent = ambulanceMatch ? ambulanceMatch[1] : "N/A";
+                document.getElementById("womenCellNum").textContent = womenMatch ? womenMatch[1] : "N/A";
+
+                // Extract tips
+                const tips = text.split("Tips:")[1];
+                const rulesList = document.getElementById("localRules");
+                rulesList.innerHTML = "";
+
+                if (tips) {
+                    tips.split("-").forEach(tip => {
+                        const cleanTip = tip.trim();
+                        if (cleanTip.length > 5) {
+                            const li = document.createElement("li");
+                            li.textContent = cleanTip;
+                            rulesList.appendChild(li);
+                        }
+                    });
+                }
+
+            } catch (error) {
+                console.error("Emergency Gemini Error:", error);
+                alert("Error fetching emergency info.");
+            }
+        }
+
+        fetchEmergencyInfo();
+    }
+}
+
 });
